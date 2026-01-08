@@ -19,10 +19,8 @@ public class DayTwo {
 	}
 
 	public static void splitFile(List<String> testRows) {
-
 		String line = testRows.getFirst();
 		String[] splitFile = line.split(",");
-		//System.out.println(Arrays.toString(splitFile));
 
 		ArrayList<NumberRange> ranges = new ArrayList<>();
 		for (String r : splitFile) {
@@ -35,25 +33,20 @@ public class DayTwo {
 			ranges.add(nr);
 
 		}
-		long totalOfRepetingInts=0;
-		for (NumberRange range: ranges) {
+		long totalOfRepeatingInts = 0;
+		for (NumberRange range : ranges) {
 			for (long i = range.getStartOfRange(); i <= range.getEndOfRange(); i++) {
-				//System.out.println(i);
 				String chars = Long.toString(i);
-				String a = chars.substring(0, chars.length()/2);
-				String b = chars.substring(chars.length()/2);
-//				System.out.println(chars);
-//				System.out.println(a);
-//				System.out.println(b);
-				
-				if(a.equals(b)) {
-				totalOfRepetingInts=totalOfRepetingInts+i;
+				String a = chars.substring(0, chars.length() / 2);
+				String b = chars.substring(chars.length() / 2);
+
+				if (a.equals(b)) {
+					totalOfRepeatingInts = totalOfRepeatingInts + i;
 				}
 			}
-		
-			
 		}
-		System.out.println(totalOfRepetingInts);
+		
+		System.out.println(totalOfRepeatingInts);
 
 	}
 
